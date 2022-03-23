@@ -1,11 +1,11 @@
-provider "azurerm" {
-  features {}
-}
+#provider "azurerm" {
+#  features {}
+#}
 
-resource "azurerm_resource_group" "example" {
-  name     = "my-resources"
-  location = "West Europe"
-}
+#resource "azurerm_resource_group" "example" {
+#  name     = "my-resources"
+#  location = "West Europe"
+#}
 
 module "network" {
   source              = "Azure/network/azurerm"
@@ -25,5 +25,5 @@ module "network" {
     costcenter  = "it"
   }
 
-  depends_on = [azurerm_resource_group.example]
+  depends_on = [azurerm_resource_group.myresourcegroup]
 }
